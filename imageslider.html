@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<link rel="stylesheet" href="main.css" type="text/css" />
+<script type="text/javascript" src="jquery.slider.js"></script>
+<script>
+$(document).ready( function() {
+	$('#slider').plainSlider('left',3000);
+	$('#slider2').plainSlider('up',3000);
+	$('#slider3').plainSlider('down',3000);
+});
+</script>
+
+</head>
+<body>
+<div class="example">
+    <div>
+	<ul id="slider">
+      <li><p><img data-bind="attr: { src: imgname[0],width:imgwidth,height:imgheight }" /><h4><span data-bind="text: firstSlideText"></h4></p></li>
+	  <li><img data-bind="attr: { src: imgname[1],width:imgwidth,height:imgheight }" /><p><h4><span data-bind="text: secondSlideText"></h4></p></li>
+    </ul>
+	</div>
+    
+    <!--<div id="counter"></div>-->
+</div>
+
+
+<div class="example">
+    <div>
+	<ul id="slider2">
+      <li><p><img data-bind="attr: { src: imgname[0],width:imgwidth,height:imgheight }" /><h4><span data-bind="text: firstSlideText"></h4></p></li>
+	  <li><img data-bind="attr: { src: imgname[1],width:imgwidth,height:imgheight }" /><p><h4><span data-bind="text: secondSlideText"></h4></p></li>
+    </ul>
+	</div>
+	</div>
+<div class="example">
+    <div>
+	<ul id="slider3">
+      <li><p><img data-bind="attr: { src: imgname[0],width:imgwidth,height:imgheight }" /><h4><span data-bind="text: firstSlideText"></h4></p></li>
+	  <li><img data-bind="attr: { src: imgname[1],width:imgwidth,height:imgheight }" /><p><h4><span data-bind="text: secondSlideText"></h4></p></li>
+    </ul>
+	</div>
+	</div>
+
+
+
+
+</body>
+<script src="knockout.js" type="text/javascript"></script>
+<script type="text/javascript">
+        // Here's my data model
+        var viewModel = {
+            firstSlideText: ko.observable("Slide 1"),
+            secondSlideText: ko.observable("Slide 2"),
+	    imgwidth:480,
+	    imgheight:310,
+            imgname : ['Chrysanthemum.jpg','Desert.jpg']
+        };
+
+        ko.applyBindings(viewModel); // This makes Knockout get to work
+    </script>
+</html>
